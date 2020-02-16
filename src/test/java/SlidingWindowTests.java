@@ -3,6 +3,14 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class SlidingWindowTests {
+
+    @Test
+    void findLengthOfLongestSubstringWithKDistinctElements() {
+        assertEquals(4, LongestSubstringKDistinct.findLength("araaci", 2));
+        assertEquals(2, LongestSubstringKDistinct.findLength("araaci", 1));
+        assertEquals(5, LongestSubstringKDistinct.findLength("cbbebi", 3));
+    }
+
     @Test
     void findMaxSumSubArray() {
         assertEquals(9, MaxSumSubArrayOfSizeK.findMaxSumSubArray(3, new int[]{2, 1, 5, 1, 3, 2}));
