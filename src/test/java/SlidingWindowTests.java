@@ -1,6 +1,6 @@
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class SlidingWindowTests {
 
@@ -43,9 +43,33 @@ public class SlidingWindowTests {
     }
 
     @Test
+    void findLengthReplacingOnes() {
+        assertEquals(6, ReplacingOnes.findLength(new int[] {0, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1}, 2));
+        assertEquals(9, ReplacingOnes.findLength(new int[] {0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 1, 1}, 3));
+    }
+
+    @Test
     void findSubstring() {
         assertEquals("abc", Anagram.findSubstring("abdabca", "abc"));
         assertEquals("abdec", Anagram.findSubstring("aabdec", "abc"));
+    }
+
+    @Test
+    void findPermutation() {
+        assertEquals(true, StringPermutation.findPermutation("oidbcaf", "abc"));
+        assertEquals(false, StringPermutation.findPermutation("odicf", "dc"));
+        assertEquals(false, StringPermutation.findPermutation("bcdxabcdy", "bcdyabcdx"));
+        assertEquals(false, StringPermutation.findPermutation("aaacb", "abc"));
+    }
+
+    @Test
+    void isMonotone() {
+        assertTrue(Monotone.isMonotonic(new int[]{1, 2, 2, 3}));
+    }
+
+    @Test
+    void sortedSquares() {
+        assertArrayEquals(new int[] {0,1,9,16,100}, SortedSquare.sortedSquares(new int[] {-4,-1,0,3,10}));
     }
 }
 
